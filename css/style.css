@@ -338,7 +338,7 @@ ul {
 ----------------------------------------*/
 .break-img {
     width: 100%;
-
+    -webkit-background-attachment: fixed;
 }
 
 .break-img--coffee {
