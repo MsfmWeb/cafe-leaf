@@ -338,17 +338,20 @@ ul {
 ----------------------------------------*/
 .break-img {
     width: 100%;
-    -webkit-background-attachment: fixed;
 }
 
 .break-img--coffee {
     height: min(85vw, 600px);
-    background: fixed url(../img/break01.png) no-repeat left 25% center / cover;
+    background: url(../img/break01.png) no-repeat left 25% center / cover;
+    background-attachment: fixed;
+    -webkit-background-attachment: fixed;
 }
 
 .break-img--shop {
     height: min(40vw, 600px);
-    background: fixed url(../img/break02.png) no-repeat  center / 110%  ;
+    background: url(../img/break02.png) no-repeat  center / 110%;
+    background-attachment: fixed;
+    -webkit-background-attachment: fixed;
 }
 
 /* 
