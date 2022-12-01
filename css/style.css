@@ -49,6 +49,7 @@ ul {
 /* ロゴ */
 .logo {
     filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, .8));
+    transition: opacity .3s;
 }
 
 /* page-title */
@@ -95,6 +96,18 @@ ul {
     background: #84B525;
     content: '';
     transition: inherit;
+}
+
+/* スクロールしたらフェードイン */
+.js-fadeIn {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all .3s ease;
+} 
+
+.js-fadeIn.scrollIn {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* 
@@ -263,9 +276,165 @@ ul {
 .copyright {
     font-size: .625rem;
 }
+
+/* ページトップボタン index.htmlのみ*/
+.page-top {
+    opacity: 0;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 5;
+    transform: translateY(-100px);
+}
+
+.page-top span {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background: #333;
+    transition: all .3s ease;
+}
+
+/* ページトップボタン 矢印 */
+.page-top span::before {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -35%) rotate(-45deg);
+    width: 25px;
+    height: 25px;
+    border-top: 5px solid #fff;
+    border-right: 5px solid #fff;
+    content: '';
+}
+
+/* 下から上に移動 */
+.UpMove{
+    animation: UpAnime 0.5s forwards;
+}
+
+@keyframes UpAnime{
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 上から下に移動 */
+.DownMove{
+    animation: DownAnime 0.5s forwards;
+}
+@keyframes DownAnime{
+from {
+    opacity: 1;
+    transform: translateY(0);
+}
+to {
+    opacity: 1;
+    transform: translateY(100px);
+}
+}
+
 /*
     [index.html]
 **************************************************************************** */
+/* 
+    loading
+====================================== */
+#loader-bg {
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    background: #84B525;
+    z-index: 9999;
+}
+
+#loader {
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    z-index: 9999;
+}
+
+.loader__text {
+    font-size: clamp(1.125rem, 1.75vw, 1.5rem);
+}
+
+/* ローディングアニメーション */
+.spinner,
+.spinner:before,
+.spinner:after {
+    background: #ffffff;
+    animation: load1 1s infinite ease-in-out;
+    width: 1em;
+    height: 4em;
+}
+
+.spinner {
+    color: #ffffff;
+    text-indent: -9999em;
+    margin: 20px auto;
+    position: relative;
+    font-size: 11px;
+    transform: translateZ(0);
+    animation-delay: -0.16s;
+}
+
+.spinner:before,
+.spinner:after {
+    position: absolute;
+    top: 0;
+    content: '';
+}
+
+.spinner:before {
+    left: -1.5em;
+    animation-delay: -0.32s;
+}
+
+.spinner:after {
+    left: 1.5em;
+}
+
+@-webkit-keyframes load1 {
+    0%,
+    80%,
+    100% {
+        box-shadow: 0 0;
+        height: 4em;
+    }
+    40% {
+        box-shadow: 0 -2em;
+        height: 5em;
+    }
+}
+
+@keyframes load1 {
+    0%,
+    80%,
+    100% {
+        box-shadow: 0 0;
+        height: 4em;
+    }
+    40% {
+        box-shadow: 0 -2em;
+        height: 5em;
+    }
+}
+
+
 /* 
     main
 ====================================== */
@@ -282,6 +451,7 @@ ul {
 }
 
 .title {
+    filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, .8));
     color: #fff;
     font-size: 10rem;
     font-size: clamp(5rem, 11.713vw, 10rem);
@@ -296,6 +466,7 @@ ul {
     width: 100%;
     height: 100vh;
 }
+
 .main__video {
     position: absolute;
     bottom: 0%;
@@ -303,7 +474,6 @@ ul {
     transform: translateX(-50%);
     min-width: 100%;
     min-height: 100vh;
-    
 }
 
 /* 
@@ -334,21 +504,24 @@ ul {
 
 
 /* 
-    break
+    break 固定背景画像
 ----------------------------------------*/
 .break-img {
     width: 100%;
-
 }
 
 .break-img--coffee {
     height: min(85vw, 600px);
-    background: fixed url(../img/break01.png) no-repeat left 25% center / cover;
+    background: url(../img/break01.png) no-repeat left 25% center / cover;
+    background-attachment: fixed;
+    -webkit-background-attachment: fixed;
 }
 
 .break-img--shop {
     height: min(40vw, 600px);
-    background: fixed url(../img/break02.png) no-repeat  center / 110%  ;
+    background: url(../img/break02.png) no-repeat  center / 110%;
+    background-attachment: fixed;
+    -webkit-background-attachment: fixed;
 }
 
 /* 
@@ -473,14 +646,49 @@ ul {
     line-height: 1.75;
 }
 
+.concept-content__img-area {
+    margin-bottom: 16px;
+}
+
 /* 
     staff
 ====================================== */
-/* .staff-content__staff-name{
-    transform: translateY(-100%);
-    border: 1px solid #409797;
-    background: #fff;
-} */
+.staff-content__text-area {
+    line-height: 1.75;
+}
+
+.staff-content__img-area {
+    margin-bottom: 16px;
+}
+
+/*
+    [online_shop.html]
+**************************************************************************** */
+/* 
+    page-online-shop
+====================================== */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 16px;
+    row-gap: 16px;
+    justify-items: center;
+}
+
+.grid__item {
+    display: flex;
+    flex-direction: column;
+}
+
+.grid__meta {
+    text-align: left;
+}
+
+.grid__link {
+    display: block;
+    margin-bottom: 8px;
+    transition: all .3s;
+}
 
 /*
     tab 768px~
@@ -521,12 +729,30 @@ ul {
         margin: 0 16px;
     }
 
+    /*
+        [online_shop.html]
+    **************************************************************************** */
+    /* 
+        page-online-shop
+    ====================================== */
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 24px;
+        row-gap: 24px;
+    }
+
 }
 
 /*
     @hover
 **************************************************************************** */
 @media (hover: hover) {
+    /* ロゴ */
+    .header__logo:hover,
+    .nav__logo:hover {
+        opacity: .6;
+    }
+
     /* btn 左上から色変化 */
     .btn:hover::before {
         transform-origin: top right;
@@ -547,9 +773,26 @@ ul {
     .breadcrumb__link:hover {
         color: #84B525;
     }
+
+    /* online-shop 商品画像 */
+    .grid__link:hover {
+        transform: scale(1.01);
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, .8);
+    }
+
+    /* ページトップボタン hover時 */
+    .page-top:hover span {
+        background: #84B525;
+    }
 }
 
 @media (hover: none) {
+    /* ロゴ */
+    .header__logo:hover,
+    .nav__logo:hover {
+        opacity: .6;
+    }
+
     /* btn 左上から色変化 */
     .btn:active::before {
         transform-origin: top right;
@@ -571,6 +814,16 @@ ul {
     .breadcrumb__link:active {
         color: #84B525;
     }
+
+    /* online-shop 商品画像 */
+    .grid__link:hover {
+        transform: scale(1.01);
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, .8);
+    }
+    /* ページトップボタン hover時 */
+    .page-top:active span {
+        background: #84B525;
+    }
 }
 
 
@@ -581,9 +834,13 @@ ul {
     /* 
         共通
     ====================================== */
+    /* page-title */
+    .page-title {
+        font-size: 4rem;
+    }
     /* section-title */
     .section-title {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
 
     /* 
@@ -642,13 +899,11 @@ ul {
 
     .content__img-area {
         width: 50%;
-        min-height: 100%;
         margin-bottom: 0;
     }
 
     .content__img {
-        width: 100%;
-        min-height: 100%;
+        min-height: 400px;
         object-fit: cover;
     }
     
@@ -709,14 +964,9 @@ ul {
     /* 
         concept
     ====================================== */
-    .concept__logo {
-        width: min(100%, 300px);
-    }
-
     .concept-content__text-area {
-        width: 70%;
+        width: 80%;
         padding-left: 24px;
-        font-size: 1.125rem;
     }
 
     .concept-content__text-area p {
@@ -724,30 +974,24 @@ ul {
     }
 
     .concept-content__img-area {
-        width: 30%;
-        text-align: right;
+        width: 20%;
     }
 
     /* 
         staff
     ====================================== */
     .staff-content {
-        display: block;
+        flex-direction: row;
+        align-items: start;
     }
+
     .staff-content__text-area {
-        width: 100%;
-        font-size: 1.125rem;
-        line-height: 2;
+        width: 70%;
+        padding-right: 24px;
     }
 
     .staff-content__img-area {
-        width: auto;
-        margin: 0 0 8px 8px;
-        float: right;
-    }
-
-    .staff-content__img {
-        width: 250px;
+        width: 30%;
     }
 
 
