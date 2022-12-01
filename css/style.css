@@ -338,20 +338,17 @@ ul {
 ----------------------------------------*/
 .break-img {
     width: 100%;
+
 }
 
 .break-img--coffee {
     height: min(85vw, 600px);
-    background: url(../img/break01.png) no-repeat left 25% center / cover;
-    background-attachment: fixed;
-    -webkit-background-attachment: fixed;
+    background: fixed url(../img/break01.png) no-repeat left 25% center / cover;
 }
 
 .break-img--shop {
     height: min(40vw, 600px);
-    background: url(../img/break02.png) no-repeat  center / 110%;
-    background-attachment: fixed;
-    -webkit-background-attachment: fixed;
+    background: fixed url(../img/break02.png) no-repeat  center / 110%  ;
 }
 
 /* 
@@ -476,33 +473,14 @@ ul {
     line-height: 1.75;
 }
 
-/*
-    [online_shop.html]
-**************************************************************************** */
 /* 
-    page-online-shop
+    staff
 ====================================== */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 16px;
-    row-gap: 16px;
-    justify-items: center;
-}
-
-.grid__item {
-    display: flex;
-    flex-direction: column;
-}
-
-.grid__meta {
-    text-align: left;
-}
-
-.grid__link {
-    display: block;
-    transition: all .3s;
-}
+/* .staff-content__staff-name{
+    transform: translateY(-100%);
+    border: 1px solid #409797;
+    background: #fff;
+} */
 
 /*
     tab 768px~
@@ -543,18 +521,6 @@ ul {
         margin: 0 16px;
     }
 
-    /*
-        [online_shop.html]
-    **************************************************************************** */
-    /* 
-        page-online-shop
-    ====================================== */
-    .grid {
-        grid-template-columns: repeat(3, 1fr);
-        column-gap: 24px;
-        row-gap: 24px;
-    }
-
 }
 
 /*
@@ -581,11 +547,6 @@ ul {
     .breadcrumb__link:hover {
         color: #84B525;
     }
-
-    /* online-shop 商品画像 */
-    .grid__link:hover {
-        opacity: .6;
-    }
 }
 
 @media (hover: none) {
@@ -609,11 +570,6 @@ ul {
     /* パンくずリスト */
     .breadcrumb__link:active {
         color: #84B525;
-    }
-
-    /* online-shop 商品画像 */
-    .grid__link:active {
-        opacity: .6;
     }
 }
 
@@ -691,7 +647,8 @@ ul {
     }
 
     .content__img {
-        min-height: 400px;
+        width: 100%;
+        min-height: 100%;
         object-fit: cover;
     }
     
