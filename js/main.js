@@ -64,7 +64,7 @@ $(function() {
             if(windowHeight > targetHeight) {
                 $(this).addClass('in');
                 $('.js-fadeIn.in').each(function(i) {
-                    let delay = 60;
+                    let delay = 100;
                     $(this).delay(i * delay).queue(function(next){
                         $(this).addClass('scrollIn');
                         next();
