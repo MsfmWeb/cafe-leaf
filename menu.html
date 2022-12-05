@@ -11,27 +11,30 @@
 <body>
     <div ontouchstart="">
     <!-- header -->
-    <header class="header container">
-        <a href="index.html">
-            <img class="logo header__logo" src="img/logo.svg" alt="Cafe Leaf">
-        </a>
-        <nav class="header__nav nav">
-            <ul class="nav__list">
-                <li class="nav__item"><a class="nav__link" href="index.html#mainvisual">Home</a></li>
-                <li class="nav__item current"><a class="nav__link" href="menu.html">Menu</a></li>
-                <li class="nav__item"><a class="nav__link" href="about.html">About</a></li>
-                <li class="nav__item"><a class="nav__link" href="online_shop.html">Online Shop</a></li>
-                <li class="nav__item"><a class="nav__link" href="index.html#access">Access</a></li>
-            </ul>
+    <header class="header">
+        <div class="header__container container">
             <a href="index.html">
-                <img class="logo nav__logo" src="img/logo.svg" alt="Cafe Leaf">
+                <img class="logo header__logo" src="img/logo.svg" alt="Cafe Leaf">
             </a>
-        </nav>
-        <button class="hamburger">
-            <span class="hamburger__bar"></span>
-            <span class="hamburger__bar"></span>
-            <span class="hamburger__bar"></span>
-        </button>
+            <nav class="header__nav nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a class="nav__link" href="index.html#mainvisual">Home</a></li>
+                    <li class="nav__item"><a class="nav__link" href="index.html#news">News</a></li>
+                    <li class="nav__item"><a class="nav__link" href="menu.html">Menu</a></li>
+                    <li class="nav__item"><a class="nav__link" href="about.html">About</a></li>
+                    <li class="nav__item"><a class="nav__link" href="online_shop.html">Online Shop</a></li>
+                    <li class="nav__item"><a class="nav__link" href="index.html#access">Access</a></li>
+                </ul>
+                <a href="index.html">
+                    <img class="logo nav__logo" src="img/logo.svg" alt="Cafe Leaf">
+                </a>
+            </nav>
+            <button class="hamburger">
+                <span class="hamburger__bar"></span>
+                <span class="hamburger__bar"></span>
+                <span class="hamburger__bar"></span>
+            </button>
+        </div>
     </header>
     <!-- /header -->
     <!-- main -->
@@ -43,6 +46,10 @@
             </ol>
         </nav>
         <h1 class="page-title">Menu</h1>
+        <p class="page__head-text">
+            店内にてお召し上がり頂けるこだわりの珈琲と軽食です。<br>
+            どんな組み合わせでも相性良く楽しめるようなメニューをご用意しております。
+        </p>
         <!-- drink -->
         <section class="drink section-wrap--size-s">
             <h2 class="section-title">Drink</h2>
@@ -50,43 +57,43 @@
                 <div class="drink-content__text-area content__text-area">
                     <dl class="drink-content__list">
                         <div>
-                            <dt class="drink-content__label">テキストテキストテキスト</dt>
+                            <dt class="drink-content__label">商品名</dt>
                             <dd class="drink-content__text">&yen;9,999（税込）</dd>
                         </div>
                         <div>
-                            <dt class="drink-content__label">テキストテキストテキスト</dt>
+                            <dt class="drink-content__label">商品名</dt>
                             <dd class="drink-content__text">&yen;9,999（税込）</dd>
                         </div>
                         <div>
-                            <dt class="drink-content__label">テキストテキストテキスト</dt>
+                            <dt class="drink-content__label">商品名</dt>
                             <dd class="drink-content__text">&yen;9,999（税込）</dd>
                         </div>
                         <div>
-                            <dt class="drink-content__label">テキストテキストテキスト</dt>
+                            <dt class="drink-content__label">商品名</dt>
                             <dd class="drink-content__text">&yen;9,999（税込）</dd>
                         </div>
                         <div>
-                            <dt class="drink-content__label">テキストテキストテキスト</dt>
+                            <dt class="drink-content__label">商品名</dt>
                             <dd class="drink-content__text">&yen;9,999（税込）</dd>
                         </div>
                         <div>
-                            <dt class="drink-content__label">テキストテキストテキスト</dt>
+                            <dt class="drink-content__label">商品名</dt>
                             <dd class="drink-content__text">&yen;9,999（税込）</dd>
                         </div>
                         <div>
-                            <dt class="drink-content__label">テキストテキストテキスト</dt>
+                            <dt class="drink-content__label">商品名</dt>
                             <dd class="drink-content__text">&yen;9,999（税込）</dd>
                         </div>
                         <div>
-                            <dt class="drink-content__label">テキストテキストテキスト</dt>
+                            <dt class="drink-content__label">商品名</dt>
                             <dd class="drink-content__text">&yen;9,999（税込）</dd>
                         </div>
                         <div>
-                            <dt class="drink-content__label">テキストテキストテキスト</dt>
+                            <dt class="drink-content__label">商品名</dt>
                             <dd class="drink-content__text">&yen;9,999（税込）</dd>
                         </div>
                         <div>
-                            <dt class="drink-content__label">テキストテキストテキスト</dt>
+                            <dt class="drink-content__label">商品名</dt>
                             <dd class="drink-content__text">&yen;9,999（税込）</dd>
                         </div>
                     </dl>
@@ -104,43 +111,43 @@
                 <div class="food-content__text-area content__text-area">
                     <dl class="food-content__list">
                         <div>
-                            <dt class="food-content__label">テキストテキストテキスト</dt>
+                            <dt class="food-content__label">商品名</dt>
                             <dd class="food-content__text">&yen;9,999（税込）</dd>
                         </div>
                         <div>
-                            <dt class="food-content__label">テキストテキストテキスト</dt>
+                            <dt class="food-content__label">商品名</dt>
                             <dd class="food-content__text">&yen;9,999（税込）</dd>
                         </div>
                         <div>
-                            <dt class="food-content__label">テキストテキストテキスト</dt>
+                            <dt class="food-content__label">商品名</dt>
                             <dd class="food-content__text">&yen;9,999（税込）</dd>
                         </div>
                         <div>
-                            <dt class="food-content__label">テキストテキストテキスト</dt>
+                            <dt class="food-content__label">商品名</dt>
                             <dd class="food-content__text">&yen;9,999（税込）</dd>
                         </div>
                         <div>
-                            <dt class="food-content__label">テキストテキストテキスト</dt>
+                            <dt class="food-content__label">商品名</dt>
                             <dd class="food-content__text">&yen;9,999（税込）</dd>
                         </div>
                         <div>
-                            <dt class="food-content__label">テキストテキストテキスト</dt>
+                            <dt class="food-content__label">商品名</dt>
                             <dd class="food-content__text">&yen;9,999（税込）</dd>
                         </div>
                         <div>
-                            <dt class="food-content__label">テキストテキストテキスト</dt>
+                            <dt class="food-content__label">商品名</dt>
                             <dd class="food-content__text">&yen;9,999（税込）</dd>
                         </div>
                         <div>
-                            <dt class="food-content__label">テキストテキストテキスト</dt>
+                            <dt class="food-content__label">商品名</dt>
                             <dd class="food-content__text">&yen;9,999（税込）</dd>
                         </div>
                         <div>
-                            <dt class="food-content__label">テキストテキストテキスト</dt>
+                            <dt class="food-content__label">商品名</dt>
                             <dd class="food-content__text">&yen;9,999（税込）</dd>
                         </div>
                         <div>
-                            <dt class="food-content__label">テキストテキストテキスト</dt>
+                            <dt class="food-content__label">商品名</dt>
                             <dd class="food-content__text">&yen;9,999（税込）</dd>
                         </div>
                     </dl>

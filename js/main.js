@@ -92,12 +92,12 @@ $(function() {
     
             var wH = window.innerHeight; //ブラウザの内側の高さ（ページが表示され、見えている高さ）を取得
                 var footerPos = $('.footer').offset().top; //#footerのtopの位置を取得
-                if(scroll + wH >= (footerPos + 20)) {//時点でのスクロール量 + 現在表示されているブラウザの高さ と #footerのtop位置 + 20(ページトップボタンのbottom位置)を比較して前者が大きいならば
-                    var pos = (scroll + wH) - footerPos + 20;//(時点でのスクロール量 + 現在表示されているブラウザの高さ) - #footerのtop位置 + 20(ページトップボタンのbottom位置)
+                if(scroll + wH >= (footerPos + 10)) {//時点でのスクロール量 + 現在表示されているブラウザの高さ と #footerのtop位置 + 20(ページトップボタンのbottom位置)を比較して前者が大きいならば
+                    var pos = (scroll + wH) - footerPos + 10;//(時点でのスクロール量 + 現在表示されているブラウザの高さ) - #footerのtop位置 + 20(ページトップボタンのbottom位置)
                     $('#page-top').css('bottom', pos); //ページトップボタンのbottomにposの値を指定
                 } else {
                     if ($('#page-top').hasClass('UpMove')){ //上記以外かつUpMoveを持っていれば
-                        $('#page-top').css('bottom', '20px'); //ページトップボタンを画面に対してbottom20pxで配置
+                        $('#page-top').css('bottom', '10px'); //ページトップボタンを画面に対してbottom20pxで配置
                     }
                 }
         }
