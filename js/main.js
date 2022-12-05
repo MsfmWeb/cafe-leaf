@@ -1,13 +1,13 @@
 $(function() {
 
     //ローディング
-    $('#wrap').css('display', 'none');
+    $('#wrap').css('opacity', '0');
     $('#loader-bg, #loader').css('display, block');
 
     $(window).on('load', function() {
         $('#loader-bg').delay(900).fadeOut(800);
         $('#loader').delay(600).fadeOut(300);
-        $('#wrap').css('display', 'block');
+        $('#wrap').css('opacity', '1');
     });
 
     // 10秒たったら強制的にロード画面を非表示
