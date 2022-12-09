@@ -589,7 +589,7 @@ to {
 }
 
 .menu-card__img {
-    border-radius: 50%;
+    border-radius: 80% 0;
 }
 
 .menu-card__title {
@@ -742,12 +742,12 @@ to {
 
 .drink-content__label,
 .food-content__label {
-    width: 70%;
+    width: 65%;
 }
 
 .drink-content__text,
 .food-content__text {
-    width: 30%;
+    width: 35%;
     text-align: right;
 }
 

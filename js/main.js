@@ -1,5 +1,7 @@
 $(function() {
 
+
+
     //ローディング
     $('#wrap').css('opacity', '0');
     $('#loader-bg, #loader').css('display, block');
@@ -114,4 +116,11 @@ $(function() {
             }, 500);//ページトップスクロールの速さ。数字が大きいほど遅くなる
             return false;//リンク自体の無効化
         });
+
+
+
+
 });
+
+video = document.getElementById('video');
+video.playbackRate = 0.5; //速度調整
